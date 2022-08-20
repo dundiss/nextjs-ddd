@@ -68,6 +68,12 @@
   cursor: pointer;
 }
 
+.loginIcon,
+.logoutIcon{
+  /* color: #2ca9ad; */
+  display: none;
+}
+
 .header a:hover {
   /* color: #c291e2; */
   background-color: #a1f0f3;
@@ -78,4 +84,24 @@
   color: #38015c; */
   background-color: #a1f0f3;
   color: #2ca9ad;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 2%;
+  }
+  .profilText{
+    display: none;
+  }
+
+  .loginIcon,
+  .logoutIcon{
+    display:initial;
+    font-size: 1.6rem;
+  }
+
+  .loginButton,
+  .logoutButton{
+    display:none;
+  }
 }

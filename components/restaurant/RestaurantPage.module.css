@@ -62,12 +62,12 @@
   /* width: 400px; */
   height: 200px;
   background-color: white;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 00px 0px 10px;
 }
 
 .main .meals .mealImage {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -178,20 +178,10 @@
   font-weight: bold;
 }
 
-.line {
-  border-bottom: 1px solid #bac3c3;
-  margin: 10px;
-}
-
 @media (max-width: 768px) {
   .container {
     width: 98%;
     padding: 5px;
-  }
-
-  .hr {
-    margin-left: 0px;
-    margin-right: 0px;
   }
 
   .heroElements {
@@ -213,14 +203,15 @@
   .main .meals {
     height: auto;
     background-color: white;
-    padding: 10px 10px ;
+    padding: 0px 0px 10px 0px ;
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .main .meals .mealImage{
-    width: 90%;
+  .main .meals .mealImage {
+    width: 100%;
     height: auto;
+    border-radius: none;
   }
 
   .restaurantDesc {
