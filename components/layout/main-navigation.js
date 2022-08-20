@@ -14,7 +14,7 @@ function MainNavigation() {
   return (
     <header className={classes.header}>
       <Link href='/'>
-        <a>
+        <a className={classes.logoBox}>
           <div className={classes.logo}>3D</div>
           <div className={classes.logo2}>Délices De Diebs</div>
         </a>

@@ -1,0 +1,266 @@
+/* Other rules */
+.heroElements {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.heroElements img {
+  height: 200px;
+  margin-left: var(--sideMargin);
+}
+
+.p {
+  color: #868a8a;
+}
+
+.primarySubtitle {
+  font-size: 20px;
+  line-height: 24px;
+  color: #2e3333;
+  margin: 20px 0;
+}
+
+.secondarySubtitle {
+  font-size: 18px;
+  line-height: 15.6px;
+  color: #2e3333;
+  margin: 20px 0;
+}
+.restaurantDesc {
+  display: flex;
+  flex-direction: column;
+  height: 257px;
+}
+
+.restaurantDesc p {
+  font-size: 19px;
+  line-height: 28.8px;
+}
+
+.main{
+  padding: 1rem 10% 2rem 10%;
+  background-color: #f3f5f5;
+}
+
+.main .categoriesGrid {
+  width: 66%;
+  display: grid;
+  /* grid-template-columns: 400px 400px; */
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.main .categoriesGrid:hover {
+  cursor: pointer;
+}
+
+.main .meals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 400px; */
+  height: 200px;
+  background-color: white;
+  padding: 0px 10px 0px 10px;
+}
+
+.main .meals .mealImage {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.main .mealsDesc p {
+  font-size: 14px;
+  line-height: 20.8px;
+}
+
+.main .mealsPrice > span:first-child {
+  font-size: 17px;
+  line-height: 14.7px;
+  color: #808484;
+  margin: 20px 0;
+}
+
+.main .fa-star span:nth-child(2),
+.fa-star {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 10.7px;
+  color: #ff8000;
+  margin: 20px 20px;
+}
+
+.main .mealsPrice {
+  display: flex;
+  align-items: center;
+}
+
+.basket {
+  position: fixed;
+  right: 240px;
+  top: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  background-color: white;
+}
+
+.basket > button {
+  height: 50px;
+  border-radius: 5px;
+  margin: 10px;
+  color: white;
+  border-color: transparent;
+}
+
+.basketElements {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.basketLeftCol > button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #00cdbd;
+  color: #00cdbd;
+}
+
+.basketElements span {
+  font-size: 17px;
+  color: #808484;
+}
+
+.basketLeftCol > span,
+.total span,
+.subTotal span,
+.fees span {
+  color: #808484;
+  font-size: 17px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.total span {
+  color: black;
+}
+
+.emptyBasket {
+  background-color: #bac3c3;
+  color: gray;
+}
+
+.basket p {
+  text-align: center;
+  color: #808484;
+}
+
+.filled-basket {
+  background-color: #00cdbd;
+}
+
+.subTotal,
+.total,
+.fees {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 10px 10px;
+}
+
+.total span {
+  font-weight: bold;
+}
+
+.line {
+  border-bottom: 1px solid #bac3c3;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 98%;
+    padding: 5px;
+  }
+
+  .hr {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .heroElements {
+    flex-direction: column-reverse;
+  }
+
+  .heroElements img {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .main .categoriesGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .main .meals {
+    height: auto;
+    background-color: white;
+    padding: 10px 10px ;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .main .meals .mealImage{
+    width: 90%;
+    height: auto;
+  }
+
+  .restaurantDesc {
+    height: auto;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .basket {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    height: fit-content;
+    flex-direction: column-reverse;
+    justify-content: end;
+    margin: 0px;
+    padding-left: 0px;
+  }
+
+  .emptyBasket {
+    background-color: purple;
+  }
+
+  .basket > button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: transparent;
+  }
+
+  .basketElements > span,
+  .total span,
+  .subTotal span,
+  .fees span {
+    color: #808484;
+    font-size: 14px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}

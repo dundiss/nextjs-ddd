@@ -1,25 +1,38 @@
 .header {
   width: 100%;
   height: 5rem;
-  background-color: #38015c;
+  /* background-color: #38015c; */
+  background-color: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.logoBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
   font-family: 'Lato', sans-serif;
-  font-size: 3.2rem;
-  color: white;
+  font-size: 3.4rem;
+  /* color: white; */
+  color: #2ca9ad;
   margin: 0;
 }
 
 .logo2 {
   font-family: 'Lato', sans-serif;
   font-size: 0.6rem;
-  color: white;
+  /* color: white; */
+  color: #2ca9ad;
   margin: 0;
 }
 
@@ -37,15 +50,18 @@
 
 .header a {
   text-decoration: none;
-  color: white;
+  /* color: white; */
+  color: #2ca9ad;
   font-weight: bold;
 }
 
 .header button {
   font: inherit;
   background-color: transparent;
-  border: 1px solid white;
-  color: white;
+  /* border: 1px solid white; */
+  border: 1px solid #2ca9ad;
+  /* color: white; */
+  color: #2ca9ad;
   font-weight: bold;
   padding: 0.5rem 1.5rem;
   border-radius: 6px;
@@ -53,10 +69,13 @@
 }
 
 .header a:hover {
-  color: #c291e2;
+  /* color: #c291e2; */
+  background-color: #a1f0f3;
 }
 
 .header button:hover {
-  background-color: #c291e2;
-  color: #38015c;
+  /* background-color: #c291e2;
+  color: #38015c; */
+  background-color: #a1f0f3;
+  color: #2ca9ad;
 }
