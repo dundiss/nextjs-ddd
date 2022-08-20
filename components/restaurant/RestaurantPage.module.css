@@ -84,8 +84,8 @@
   margin: 20px 0;
 }
 
-.main .fa-star span:nth-child(2),
-.fa-star {
+.main .faStar span:nth-child(2),
+.faStar {
   font-size: 12px;
   font-weight: bold;
   line-height: 10.7px;
@@ -96,6 +96,7 @@
 .main .mealsPrice {
   display: flex;
   align-items: center;
+  padding-left: 5%;
 }
 
 .basket {

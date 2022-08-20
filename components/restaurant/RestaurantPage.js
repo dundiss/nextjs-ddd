@@ -85,7 +85,7 @@ function RestaurantPage({ data }) {
                                                 <p>{meal.description}</p>
                                                 <div className={classes.mealsPrice}>
                                                     <span>{meal.price} €</span>
-                                                    {meal.popular && <i className="fas fa-star"><span> Populaire</span></i>}
+                                                    {meal.popular && <i className={classes.fas, classes.faStar}><span> Populaire</span></i>}
                                                 </div>
                                             </div>
                                             {meal.picture && <img className={classes.mealImage} src={meal.picture} alt={`im-respas-${meal.id}`} />}
