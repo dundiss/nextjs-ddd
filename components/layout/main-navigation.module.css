@@ -89,6 +89,12 @@
 @media (max-width: 768px) {
   .header {
     padding: 0 2%;
+    height: 3.5rem;
+  }
+
+  .logo{
+    font-size: 2.6rem;
+    line-height: 2.2rem;
   }
   .profilText{
     display: none;
