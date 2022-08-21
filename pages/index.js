@@ -72,7 +72,7 @@ export const getStaticProps = () => {
                 id: "1519055545-03",
                 title: "Couscous",
                 description:
-                  "Couscous, tomate, Pois de chiche, Oignon, courgette, carotte",
+                  "Couscous, viande, tomate, Pois de chiche, Oignon, courgette, carotte",
                 price: "5.00",
                 picture: "https://res.cloudinary.com/dundiss/image/upload/v1661123486/3D/couscous_jyl4bt.png"
               },
