@@ -1,5 +1,5 @@
 .auth {
-  margin: 3rem auto;
+  margin: 6rem auto;
   width: 95%;
   max-width: 25rem;
   border-radius: 6px;
@@ -74,4 +74,10 @@
 .actions .toggle:hover {
   background-color: transparent;
   color: #8cc8ca;
+}
+
+@media (max-width: 768px) {
+  .auth {
+    margin: 4rem auto;
+  }
 }

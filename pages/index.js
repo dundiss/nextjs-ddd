@@ -46,7 +46,8 @@ export const getStaticProps = () => {
                 price: "5.00",
                 picture:
                   "https://f.roocdn.com/images/menu_items/1583350/item-image.jpg",
-                popular: true
+                popular: true,
+                daySelection: true
               },
               {
                 id: "1519055545-01",
@@ -60,9 +61,9 @@ export const getStaticProps = () => {
               },
               {
                 id: "1519055545-02",
-                title: "Thiébou dieune (Riz au poisson)",
+                title: "\nThiébou dieune (Riz au poisson)",
                 description:
-                  "Poisson, Riz, Oignon, ail, tomate, poivron, carotte, aubergine, laurier, citron, piment",
+                  "Riz, Poisson, Oignon, ail, tomate, poivron, carotte, aubergine, laurier, citron, piment",
                 price: "5.00",
                 picture:
                   "https://res.cloudinary.com/dundiss/image/upload/v1660780642/3D/thiebou-dieune_uhzbxo.jpg"
@@ -71,7 +72,7 @@ export const getStaticProps = () => {
                 id: "1519055545-03",
                 title: "Thiébou yap (Riz à la viande)",
                 description:
-                  "Viande de boeuf, Riz, Oignon, ail, poivron, carotte, laurier, poivre",
+                  "Riz, Viande de boeuf, Oignon, ail, poivron, carotte, laurier, poivre",
                 price: "5.00",
                 picture:
                   "https://f.roocdn.com/images/menu_items/3905693/item-image.jpg"
@@ -80,10 +81,11 @@ export const getStaticProps = () => {
                 id: "1519055545-04",
                 title: "Thiébou guinar (Riz au Poulet)",
                 description:
-                  "Poulet, Riz, Oignon, ail, poivron, carotte, laurier, poivre",
+                  "Riz, Poulet, Oignon, ail, poivron, carotte, laurier, poivre",
                 price: "5.00",
                 picture:
-                  "https://res.cloudinary.com/dundiss/image/upload/v1660781110/3D/thiebou-guinar_rxprmv.jpg"
+                  "https://res.cloudinary.com/dundiss/image/upload/v1660781110/3D/thiebou-guinar_rxprmv.jpg",
+                nextDaySelection: true
               },
               {
                 id: "1519055545-05",

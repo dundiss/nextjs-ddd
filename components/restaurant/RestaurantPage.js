@@ -48,7 +48,7 @@ function RestaurantPage({ data }) {
 
 
     const handleOrder = (meal) => {
-        if (meal) {
+        if (meal && (meal.daySelection || meal.nextDaySelection)) {
             const newOrder = [...basket];
             const foundOrder = newOrder.find(element => element.id === meal.id);
             if (foundOrder) {
@@ -107,6 +107,8 @@ function RestaurantPage({ data }) {
                                         <div key={meal.id} className={classes.meals}
                                             onClick={(() => { handleOrder(meal) })}
                                         >
+                                            {meal.daySelection && <div className={classes.badge}>PLAT DU JOUR</div>}
+                                            {meal.nextDaySelection && <div className={classes.nextDayBadge}>POUR DEMAIN</div>}
                                             <div className={classes.mealsDesc}>
                                                 <h4 className={classes.secondarySubtile}>{meal.title}</h4>
                                                 <p>{meal.description}</p>
