@@ -101,7 +101,7 @@
 
 .basket {
   position: fixed;
-  right: 240px;
+  right: 10%;
   top: 440px;
   display: flex;
   flex-direction: column;
@@ -110,7 +110,12 @@
   background-color: white;
 }
 
-.basket > button {
+.cartClose{
+  display: none;
+}
+
+.cartContent > button {
+  width: 95%;
   height: 50px;
   border-radius: 5px;
   margin: 10px;
@@ -129,8 +134,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1px solid #00cdbd;
-  color: #00cdbd;
+  border: 1px solid #2ca9ad;
+  color: #2ca9ad;
 }
 
 .basketElements span {
@@ -162,8 +167,8 @@
   color: #808484;
 }
 
-.filled-basket {
-  background-color: #00cdbd;
+.filledBasket {
+  background-color: #2ca9ad;
 }
 
 .subTotal,
@@ -179,11 +184,6 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    width: 98%;
-    padding: 5px;
-  }
-
   .heroElements {
     flex-direction: column-reverse;
   }
@@ -191,6 +191,10 @@
   .heroElements img {
     width: 100%;
     margin-left: 0px;
+  }
+
+  .main{
+    padding: 1rem 3% 2rem 3%;
   }
 
   .main .categoriesGrid {
@@ -223,20 +227,63 @@
   }
 
   .basket {
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
 
     height: fit-content;
-    flex-direction: column-reverse;
-    justify-content: end;
+    
     margin: 0px;
     padding-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .cartClose{
+    display: flex;
+    flex-direction: row-reverse;
   }
 
-  .emptyBasket {
+  .hideCartClose{
+    display: none;
+  }
+
+  .cartContent{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: end;
+  }
+
+  .minusCart{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
     background-color: purple;
+    color: white;
+    padding: 0 3%;
+  }
+
+  .hideBasket{
+    display: none;
+  }
+
+  .minusCart>span:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #320146;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .hideMinusCart{
+      display: none;
+  }
+
+  .basketContent__elements{
+    display: none;
   }
 
   .basket > button {
@@ -244,6 +291,7 @@
     height: 50px;
     border-radius: 5px;
     border: transparent;
+    box-sizing: border-box;
   }
 
   .basketElements > span,

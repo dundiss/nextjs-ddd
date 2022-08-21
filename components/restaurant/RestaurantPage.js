@@ -3,6 +3,9 @@ import { useState } from "react"
 import classes from "./RestaurantPage.module.css";
 
 function RestaurantPage({ data }) {
+    const [displayBasketContent, setDisplayBasketContent] = useState(true);
+    const [canValidateBasketContent, setCanValidateBasketContent] = useState(true);
+    const [baskeElemNumber, setBaskeElemNumber] = useState(0);
     const [basket, setBasket] = useState([]);
     const [subTotal, setSubTotal] = useState(0);
     const shippinpCost = 2.5;
@@ -18,6 +21,8 @@ function RestaurantPage({ data }) {
             setBasket(order);
 
             setSubTotal(subTotal + Number(foundOrder.price));
+
+            setBaskeElemNumber(baskeElemNumber + 1);
         }
     }
 
@@ -36,6 +41,8 @@ function RestaurantPage({ data }) {
             setBasket(order);
 
             setSubTotal(subTotal - Number(foundOrder.price));
+
+            setBaskeElemNumber(baskeElemNumber - 1);
         }
     }
 
@@ -56,7 +63,19 @@ function RestaurantPage({ data }) {
             setBasket(newOrder);
 
             setSubTotal(subTotal + Number(meal.price));
+
+            setBaskeElemNumber(baskeElemNumber + 1);
         }
+    }
+
+    const closeHandler = () => {
+        setDisplayBasketContent(false);
+        setCanValidateBasketContent(true)
+    }
+
+    const showBasketContent = () => {
+        setDisplayBasketContent(true);
+        setCanValidateBasketContent(false);
     }
 
     return (
@@ -99,45 +118,50 @@ function RestaurantPage({ data }) {
                 })
             }
             <div className={classes.basket}>
-                <button className={basket.length ? classes.filledBasket : classes.emptyBasket}>Valider mon panier
-                </button>
-                {!basket.length && <p>Votre panier est vide</p>}
-                <div>
-                    {
-                        basket.map(({ id, title, price, counter }, indexOrder) => {
-                            return (
-                                <div key={indexOrder} className={classes.basketElements}>
-                                    <div className={classes.basketLeftCol}>
-                                        <button onClick={() => { handleDecrease(id) }}>-</button>
-                                        <span>{counter}</span>
-                                        <button onClick={() => { handleIncrease(id) }}>+</button>
+                <div className={displayBasketContent && basket.length ? classes.cartClose : classes.hideCartClose} onClick={closeHandler}><a>X</a></div>
+                <div className={classes.cartContent}>
+                    <button className={basket.length === 0 ? classes.emptyBasket : canValidateBasketContent ? classes.hideBasket : classes.filledBasket}>Valider mon panier
+                    </button>
+                    <div className={!displayBasketContent ? classes.minusCart : classes.hideMinusCart} onClick={showBasketContent}><span>{baskeElemNumber}</span><span>Voir le panier</span><span>{(subTotal + shippinpCost).toFixed(2)} €</span>
+                    </div>
+                    {!basket.length && <p>Votre panier est vide</p>}
+                    <div className={!displayBasketContent && classes.basketContent__elements}>
+                        {
+                            basket.map(({ id, title, price, counter }, indexOrder) => {
+                                return (
+                                    <div key={indexOrder} className={classes.basketElements}>
+                                        <div className={classes.basketLeftCol}>
+                                            <button onClick={() => { handleDecrease(id) }}>-</button>
+                                            <span>{counter}</span>
+                                            <button onClick={() => { handleIncrease(id) }}>+</button>
+                                        </div>
+                                        <span>{title}</span>
+                                        <span>{(price * counter).toFixed(2)} €</span>
                                     </div>
-                                    <span>{title}</span>
-                                    <span>{(price * counter).toFixed(2)} €</span>
-                                </div>
-                            )
-                        })
-                    }
+                                )
+                            })
+                        }
 
-                    {
-                        basket.length > 0 &&
-                        <>
-                            <div className={classes.line}></div>
-                            <div className={classes.subTotal}>
-                                <span>Sous-total</span>
-                                <span>{subTotal.toFixed(2)} €</span>
+                        {
+                            basket.length > 0 &&
+                            <div>
+                                <div className={classes.line}></div>
+                                <div className={classes.subTotal}>
+                                    <span>Sous-total</span>
+                                    <span>{subTotal.toFixed(2)} €</span>
+                                </div>
+                                <div className={classes.fees}>
+                                    <span>Frais de livraison</span>
+                                    <span>{shippinpCost} €</span>
+                                </div>
+                                <div className={classes.line}></div>
+                                <div className={classes.total}>
+                                    <span>Total</span>
+                                    <span>{(subTotal + shippinpCost).toFixed(2)} €</span>
+                                </div>
                             </div>
-                            <div className={classes.fees}>
-                                <span>Frais de livraison</span>
-                                <span>{shippinpCost} €</span>
-                            </div>
-                            <div className={classes.line}></div>
-                            <div className={classes.total}>
-                                <span>Total</span>
-                                <span>{(subTotal + shippinpCost).toFixed(2)} €</span>
-                            </div>
-                        </>
-                    }
+                        }
+                    </div>
                 </div>
             </div>
         </div>
