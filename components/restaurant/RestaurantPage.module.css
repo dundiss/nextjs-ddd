@@ -259,7 +259,7 @@
   .cartContent{
     display: flex;
     flex-direction: column-reverse;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   .minusCart{
