@@ -122,7 +122,7 @@ function RestaurantPage({ data }) {
                 })
             }
             <div className={classes.basket}>
-                <div className={displayBasketContent && basket.length ? classes.cartClose : classes.hideCartClose} onClick={closeHandler}><a>X</a></div>
+                <span className={displayBasketContent && basket.length ? classes.cartClose : classes.hideCartClose} onClick={closeHandler}><a>X</a></span>
                 <div className={classes.cartContent}>
                     <button className={basket.length === 0 ? classes.emptyBasket : canValidateBasketContent && !displayBasketContent ? classes.hideBasket : classes.filledBasket}>Valider mon panier
                     </button>
