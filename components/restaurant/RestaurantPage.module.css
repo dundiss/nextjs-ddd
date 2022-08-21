@@ -162,6 +162,14 @@
   color: gray;
 }
 
+.hideMinusCart{
+  display: none;
+}
+
+.hideCartClose{
+  display: none;
+}
+
 .basket p {
   text-align: center;
   color: #808484;
@@ -245,10 +253,6 @@
     flex-direction: row-reverse;
   }
 
-  .hideCartClose{
-    display: none;
-  }
-
   .cartContent{
     display: flex;
     flex-direction: column-reverse;
@@ -276,10 +280,6 @@
     background-color: #320146;
     width: 30px;
     height: 30px;
-  }
-  
-  .hideMinusCart{
-      display: none;
   }
 
   .basketContent__elements{

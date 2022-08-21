@@ -65,12 +65,16 @@ function RestaurantPage({ data }) {
             setSubTotal(subTotal + Number(meal.price));
 
             setBaskeElemNumber(baskeElemNumber + 1);
+
+            if (displayBasketContent) {
+                setCanValidateBasketContent(true);
+            }
         }
     }
 
     const closeHandler = () => {
         setDisplayBasketContent(false);
-        setCanValidateBasketContent(true)
+        setCanValidateBasketContent(true);
     }
 
     const showBasketContent = () => {
@@ -120,7 +124,7 @@ function RestaurantPage({ data }) {
             <div className={classes.basket}>
                 <div className={displayBasketContent && basket.length ? classes.cartClose : classes.hideCartClose} onClick={closeHandler}><a>X</a></div>
                 <div className={classes.cartContent}>
-                    <button className={basket.length === 0 ? classes.emptyBasket : canValidateBasketContent ? classes.hideBasket : classes.filledBasket}>Valider mon panier
+                    <button className={basket.length === 0 ? classes.emptyBasket : canValidateBasketContent && !displayBasketContent ? classes.hideBasket : classes.filledBasket}>Valider mon panier
                     </button>
                     <div className={!displayBasketContent ? classes.minusCart : classes.hideMinusCart} onClick={showBasketContent}><span>{baskeElemNumber}</span><span>Voir le panier</span><span>{(subTotal + shippinpCost).toFixed(2)} €</span>
                     </div>
