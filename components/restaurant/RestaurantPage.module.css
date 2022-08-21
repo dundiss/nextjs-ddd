@@ -2,7 +2,10 @@
 .heroElements {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin: 20px 0 0 0;
+  background-color: white;
+  padding: 10px;
+
 }
 
 .heroElements img {
