@@ -45,7 +45,7 @@ export const getStaticProps = () => {
                   "Poulet mariné, oignon, carottes, olives, cornichon, riz",
                 price: "5.00",
                 picture:
-                  "https://f.roocdn.com/images/menu_items/1583350/item-image.jpg",
+                  "https://res.cloudinary.com/dundiss/image/upload/v1661280134/3D/yassa_hcivw2.jpg",
                 popular: true,
                 daySelection: true
               },
