@@ -1,5 +1,5 @@
 import path from 'path';
-import fs from 'fs/promises';
+//import fs from 'fs/promises';
 
 import { Fragment } from 'react';
 
@@ -21,7 +21,7 @@ function MealDetailPage(props) {
 
 export const getData = async () => {
     const filePath = path.join(process.cwd(), 'data', 'data.json');
-    const jsonData = await fs.readFile(filePath);
+    //const jsonData = await fs.readFile(filePath);
     const parsedData = JSON.parse(jsonData);
 
     return parsedData;
