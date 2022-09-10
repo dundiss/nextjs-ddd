@@ -24,7 +24,7 @@ export const getData = async () => {
     //const jsonData = await fs.readFile(filePath);
     //const parsedData = JSON.parse(jsonData);
 
-    return parsedData;
+    return null;//parsedData;
 }
 
 
