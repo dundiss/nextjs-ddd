@@ -9,7 +9,9 @@
 }
 
 .heroElements img {
-  height: 200px;
+  /* height: 200px; */
+  width: 40%;
+  height: 14rem;
   margin-left: var(--sideMargin);
 }
 
@@ -72,7 +74,7 @@
 }
 
 .main .badge {
-  background: #02331c;
+  background: #047541;
 }
 
 .main .nextDayBadge {
@@ -88,7 +90,7 @@
   font-size: 0.8rem;
   font-weight: bold;
   color: white;
-  transform: rotateZ(-45deg) translateX(-2.5rem) translateY(0rem);
+  transform: rotateZ(-45deg) translateX(-2.8rem) translateY(-0.2rem);
   transform-origin: center;
   /* height: 20px; */
   width: 9rem;

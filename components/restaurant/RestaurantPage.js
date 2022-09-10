@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useState } from "react";
+import Button from "../ui/Button";
 
 import classes from "./RestaurantPage.module.css";
 
-function RestaurantPage({ data }) {
+function RestaurantPage(props) {
+    const [data, setData] = useState(props.data);
     const [displayBasketContent, setDisplayBasketContent] = useState(true);
     const [canValidateBasketContent, setCanValidateBasketContent] = useState(true);
     const [baskeElemNumber, setBaskeElemNumber] = useState(0);
@@ -11,6 +13,7 @@ function RestaurantPage({ data }) {
     const shippinpCost = 2.5;
 
     console.log("data--", data);
+
     const handleIncrease = (id) => {
         const foundOrder = basket.find(element => element.id === id);
         console.log("foundOrder ", foundOrder);
@@ -86,15 +89,37 @@ function RestaurantPage({ data }) {
         alert("Désolé, cette partie est encore en construction");
     }
 
+    const daySelectionHandler = async (categorie, meal) => {
+        const response = await fetch('/api/user/change-meal-status', {
+            method: 'PUT',
+            body: JSON.stringify({
+                categoryName: categorie,
+                mealId: meal.id,
+                daySelection: !meal.daySelection
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const fetchedData = await response.json();
+        setData(fetchedData)
+        console.log(fetchedData);
+    }
+
+    // if (!data) {
+    //     return <p>Loading...</p>
+    // }
+
     return (
         <div className={classes.main}>
-            <div className={classes.heroElements}>
+            {data.restaurant && <div className={classes.heroElements}>
                 <div className="restaurantDesc">
                     <h2>{data.restaurant.name}</h2>
                     <p>{data.restaurant.description}</p>
                 </div>
                 <img src={data.restaurant.picture} alt={`ìmage-${data.restaurant.name}`} />
-            </div>
+            </div>}
             {
                 data?.categories?.map((categorie, index) => {
                     console.log("Category:", categorie);
@@ -116,6 +141,7 @@ function RestaurantPage({ data }) {
                                                     <span>{meal.price} €</span>
                                                     {meal.popular && <i className={classes.fas, classes.faStar}><span> Populaire</span></i>}
                                                 </div>
+                                                <Button onClick={daySelectionHandler.bind(null, categorie.name, meal)}>Pour aujourd'hui</Button>
                                             </div>
                                             {meal.picture && <img className={classes.mealImage} src={meal.picture} alt={`im-respas-${meal.id}`} />}
                                         </div>

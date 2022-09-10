@@ -17,9 +17,11 @@ export default NextAuth({
                 //console.log(credentials, credentials);
                 //console.log(req, req);
                 // Add logic here to look up the user from the credentials supplied
-                const client = await connectToDatabase();
+                //const client = await connectToDatabase();
+                const { mongoClient: client, database: db } = await connectToDatabase();
 
-                const usersCollection = client.db().collection('users');
+                //const usersCollection = client.db().collection('users');
+                const usersCollection = db.collection('users');
 
                 const user = await usersCollection.findOne({ email: credentials.email });
 

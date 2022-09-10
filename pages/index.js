@@ -14,6 +14,12 @@ export const getStaticProps = async () => {
   const jsonData = await fs.readFile(filePath);
   const parsedData = JSON.parse(jsonData);
 
+  if (!parsedData) {
+    return {
+      notFound: true
+    }
+  }
+
   return {
     props: {
       data: {
