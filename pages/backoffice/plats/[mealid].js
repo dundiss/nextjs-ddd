@@ -22,7 +22,7 @@ function MealDetailPage(props) {
 export const getData = async () => {
     const filePath = path.join(process.cwd(), 'data', 'data.json');
     //const jsonData = await fs.readFile(filePath);
-    const parsedData = JSON.parse(jsonData);
+    //const parsedData = JSON.parse(jsonData);
 
     return parsedData;
 }
@@ -68,31 +68,31 @@ export async function getStaticProps(context) {
     };
 }
 
-// export async function getStaticPaths(context) {
-//     const { params } = context;
-//     console.log(params);
-//     const data = await getData();
+export async function getStaticPaths(context) {
+    const { params } = context;
+    console.log(params);
+    const data = await getData();
 
-//     const categorieData = data.categories.find(categorie => categorie.name === params.name);
-//     if (!categorieData) {
-//         return {
-//             notFound: true
-//         }
-//     }
+    const categorieData = data.categories.find(categorie => categorie.name === params.name);
+    if (!categorieData) {
+        return {
+            notFound: true
+        }
+    }
 
-//     const ids = categorieData.meals.find(meal => meal.id);
-//     const pathWithParams = ids.map((id) => ({ params: { mealid: id } }));
+    const ids = categorieData.meals.find(meal => meal.id);
+    const pathWithParams = ids.map((id) => ({ params: { mealid: id } }));
 
-//     return {
-//         // paths: [
-//         //     { params: { mealId: '1519055545-00' } },
+    return {
+        // paths: [
+        //     { params: { mealId: '1519055545-00' } },
 
-//         // ],
-//         paths: pathWithParams,
-//         //fallback: true
-//         fallback: false
-//     }
-// }
+        // ],
+        paths: pathWithParams,
+        //fallback: true
+        fallback: false
+    }
+}
 
 
 export default MealDetailPage;
