@@ -1,6 +1,6 @@
 import path from 'path';
-//import fs from 'fs/promises';
-import { promises as fs } from "fs";
+import fs from 'fs/promises';
+
 import { Fragment } from 'react';
 
 function MealDetailPage(props) {
