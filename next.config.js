@@ -17,7 +17,7 @@ module.exports = (phase) => {
                 mongodb_clustername: "cluster0",
                 mongodb_database: "ddd-DB",
                 MONGODB_URI: `mongodb+srv://dev:Renard+221@cluster0.brwnb.mongodb.net/ddd-DB?retryWrites=true&w=majority`,
-                SECRET="6c41f269486f8c945b4e625a64a228bc1b91055fa110baba0fbf83f2ee639936"
+                secret: "3ef5e0d81d6e18e2fff7ee232be81e8d",
             }
         }
     }
