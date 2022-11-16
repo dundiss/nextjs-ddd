@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaStar } from 'react-icons/fa';
 import Button from "../ui/Button";
 
 import classes from "./RestaurantPage.module.css";
@@ -139,7 +140,7 @@ function RestaurantPage(props) {
                                                 <p>{meal.description}</p>
                                                 <div className={classes.mealsPrice}>
                                                     <span>{meal.price} €</span>
-                                                    {meal.popular && <i className={classes.fas, classes.faStar}><span> Populaire</span></i>}
+                                                    {meal.popular && <span><FaStar /> Populaire</span>}
                                                 </div>
                                                 <Button onClick={daySelectionHandler.bind(null, categorie.name, meal)}>Pour aujourd'hui</Button>
                                             </div>

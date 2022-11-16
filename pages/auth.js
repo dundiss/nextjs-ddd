@@ -12,9 +12,11 @@ function AuthPage() {
   useEffect(() => {
     getSession().then(session => {
       if (session) {
+        console.log("LOGGUED IN");
         router.replace('/');
       }
       else {
+        console.log("FAILED TO LOG IN");
         setIsLoading(false);
       }
     });
