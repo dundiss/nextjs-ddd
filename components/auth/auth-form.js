@@ -59,6 +59,7 @@ function AuthForm() {
       try {
         const result = await createUser(enteredEmail, enteredPassword);
         console.log(result);
+        router.replace('/');
       } catch (error) {
         console.log(error);
       }
